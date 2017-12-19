@@ -27,7 +27,7 @@ func globalFlags(ctx android.BaseContext) ([]string, []string) {
 	var cflags []string
 	var asflags []string
 
-	opt := envDefault(ctx, "ART_NDEBUG_OPT_FLAG", "-O3")
+	opt := envDefault(ctx, "ART_NDEBUG_OPT_FLAG", "-Ofast")
 	cflags = append(cflags, opt)
 
 	tlab := false
@@ -103,7 +103,7 @@ func globalFlags(ctx android.BaseContext) ([]string, []string) {
 func debugFlags(ctx android.BaseContext) []string {
 	var cflags []string
 
-	opt := envDefault(ctx, "ART_DEBUG_OPT_FLAG", "-O2")
+	opt := envDefault(ctx, "ART_DEBUG_OPT_FLAG", "-Ofast")
 	cflags = append(cflags, opt)
 
 	return cflags
